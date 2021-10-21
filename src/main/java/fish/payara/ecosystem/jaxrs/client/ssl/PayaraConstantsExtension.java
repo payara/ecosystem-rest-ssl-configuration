@@ -47,5 +47,4 @@ public class PayaraConstantsExtension {
 
     public static final String PAYARA_JAXRS_CLIENT_CERTIFICATE_ALIAS = "fish.payara.jaxrs.client.certificate.alias";
 
-    public static final String PAYARA_KEYSTORE_PASSWORD_PROPERTY_NAME = "javax.net.ssl.keyStorePassword";
 }

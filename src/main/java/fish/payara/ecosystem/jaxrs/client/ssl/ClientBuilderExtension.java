@@ -162,14 +162,14 @@ public class ClientBuilderExtension extends ClientBuilder {
         if (objectProperty instanceof String) {
             String alias = (String) objectProperty;
             logger.log(Level.INFO,
-                    String.format("The alias: %s is available from the RestClientBuilder configuration", alias));
+                    String.format("The alias: %s is available from the ClientBuilder configuration", alias));
             SSLContext customSSLContext = buildSSlContext(alias);
 
             if (customSSLContext != null) {
                 jerseyClientBuilder.sslContext(customSSLContext);
             } else {
                 logger.log(Level.INFO,
-                        String.format("Although the alias: %s is configured, none keystore available for it", alias));
+                        String.format("Although the alias: %s is configured, it could not be found in an available keystore", alias));
             }
         }
     }
