@@ -68,7 +68,7 @@
         <dependency>
             <groupId>fish.payara.api</groupId>
             <artifactId>payara-api</artifactId>
-            <version>5.2021.10</version>
+            <version>5.2022.1</version>
         </dependency>
     </dependencies>
 
