@@ -65,6 +65,11 @@
             <version>2.2.6</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>fish.payara.api</groupId>
+            <artifactId>payara-api</artifactId>
+            <version>5.2021.10</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -75,6 +80,7 @@
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
+                <version>3.8.1</version>
             </plugin>
         </plugins>
     </build>

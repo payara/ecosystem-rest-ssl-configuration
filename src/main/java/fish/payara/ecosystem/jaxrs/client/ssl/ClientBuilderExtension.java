@@ -40,6 +40,7 @@
 package fish.payara.ecosystem.jaxrs.client.ssl;
 
 import com.sun.enterprise.security.ssl.SSLUtils;
+import fish.payara.security.client.PayaraConstants;
 import org.glassfish.internal.api.Globals;
 import org.glassfish.jersey.client.JerseyClientBuilder;
 
@@ -158,7 +159,7 @@ public class ClientBuilderExtension extends ClientBuilder {
     protected void evaluateAliasProperty() {
         logger.log(Level.FINE, "Starting the evaluation of the alias property to set the sslContext");
         Object objectProperty = jerseyClientBuilder.getConfiguration()
-                .getProperty(PayaraConstantsExtension.PAYARA_JAXRS_CLIENT_CERTIFICATE_ALIAS);
+                .getProperty(PayaraConstants.JAXRS_CLIENT_CERTIFICATE_ALIAS);
         if (objectProperty instanceof String) {
             String alias = (String) objectProperty;
             logger.log(Level.INFO,
