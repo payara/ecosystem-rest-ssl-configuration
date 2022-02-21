@@ -39,6 +39,7 @@
  */
 package fish.payara.ecosystem.jaxrs.client.ssl;
 
+import fish.payara.security.client.PayaraConstants;
 import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.JerseyClient;
 import org.glassfish.jersey.client.JerseyClientBuilder;
@@ -89,12 +90,12 @@ public class ClientBuilderExtensionTest {
         KeyStore[] keyStores = new KeyStore[]{getKeyStore()};
 
         when(jerseyClientBuilder.getConfiguration()).thenReturn(clientConfig);
-        when(clientConfig.getProperty(PayaraConstantsExtension.PAYARA_JAXRS_CLIENT_CERTIFICATE_ALIAS)).thenReturn("myKey");
+        when(clientConfig.getProperty(PayaraConstants.JAXRS_CLIENT_CERTIFICATE_ALIAS)).thenReturn("myKey");
         when(jerseyClientBuilder.build()).thenReturn(jerseyClient);
         doReturn(managers).when(clientBuilderExtension).getKeyManagers();
         doReturn(keyStores).when(clientBuilderExtension).getKeyStores();
 
-        Client client = clientBuilderExtension.property(PayaraConstantsExtension.PAYARA_JAXRS_CLIENT_CERTIFICATE_ALIAS, "myKey").build();
+        Client client = clientBuilderExtension.property(PayaraConstants.JAXRS_CLIENT_CERTIFICATE_ALIAS, "myKey").build();
 
         assertNotNull(client);
         verify(clientBuilderExtension, times(1)).evaluateAliasProperty();
@@ -106,10 +107,10 @@ public class ClientBuilderExtensionTest {
     @Test
     public void clientBuilderExtensionWithoutPropertyTest() {
         when(jerseyClientBuilder.getConfiguration()).thenReturn(clientConfig);
-        when(clientConfig.getProperty(PayaraConstantsExtension.PAYARA_JAXRS_CLIENT_CERTIFICATE_ALIAS)).thenReturn(null);
+        when(clientConfig.getProperty(PayaraConstants.JAXRS_CLIENT_CERTIFICATE_ALIAS)).thenReturn(null);
         when(jerseyClientBuilder.build()).thenReturn(jerseyClient);
 
-        Client client = clientBuilderExtension.property(PayaraConstantsExtension.PAYARA_JAXRS_CLIENT_CERTIFICATE_ALIAS, "myKey").build();
+        Client client = clientBuilderExtension.property(PayaraConstants.JAXRS_CLIENT_CERTIFICATE_ALIAS, "myKey").build();
 
         assertNotNull(client);
         verify(clientBuilderExtension, times(1)).evaluateAliasProperty();
