@@ -162,7 +162,7 @@ public class ClientBuilderExtension extends ClientBuilder {
                 .getProperty(PayaraConstants.JAXRS_CLIENT_CERTIFICATE_ALIAS);
         if (objectProperty instanceof String) {
             String alias = (String) objectProperty;
-            logger.log(Level.INFO,
+            logger.log(Level.FINE,
                     String.format("The alias: %s is available from the ClientBuilder configuration", alias));
             SSLContext customSSLContext = buildSSlContext(alias);
 
