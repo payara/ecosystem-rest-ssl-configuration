@@ -47,7 +47,7 @@
 
     <groupId>fish.payara.ecosystem.jaxrs</groupId>
     <artifactId>rest-ssl-configuration</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
 
     <name>Ecosystem - Payara REST SSL Configuration</name>
 
