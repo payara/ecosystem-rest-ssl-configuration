@@ -71,8 +71,8 @@
         <maven.enforcer.plugin.require.maven>3.6</maven.enforcer.plugin.require.maven>
         <maven.gpg.plugin.version>3.0.1</maven.gpg.plugin.version>
 
-        <payara.api.version>6.2023.2</payara.api.version>
-        <payara.internals.version>6.2023.2</payara.internals.version>
+        <payara.api.version>6.19.0</payara.api.version>
+        <payara.internals.version>6.19.0</payara.internals.version>
 
         <jersey.version>3.1.0-M8.payara-p1</jersey.version>
         <microprofile.version>6.0</microprofile.version>
