@@ -6,11 +6,11 @@ pipeline {
         label 'general-purpose'
     }
     tools {
-        jdk "zulu-17"
+        jdk "zulu-8"
         maven "maven-3.6.3"
     }
     environment {
-        JAVA_HOME = tool("zulu-17")
+        JAVA_HOME = tool("zulu-8")
         MAVEN_OPTS = '-Xmx2G -Djavax.net.ssl.trustStore=${JAVA_HOME}/jre/lib/security/cacerts'
         payaraBuildNumber = "${BUILD_NUMBER}"
     }
